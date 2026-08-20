@@ -1,3 +1,8 @@
+# BioTooltipR 0.1.1
+
+- Update dependencies and vendor code
+- Update tooltips with the `bio-tooltips` v2.0.X Floating UI engine.
+
 # BioTooltipR 0.1.0
 
 - Finalized package code
