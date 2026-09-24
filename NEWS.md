@@ -1,3 +1,17 @@
+# BioTooltipR 0.1.2
+
+- Updated the vendored `bio-tooltips` runtime to 2.3.2, bringing the latest
+  accessibility and mobile interaction improvements to generated reports.
+
+- `bt_plotly_gene_hover()` now uses the `bio-tooltips` 2.1.0 programmatic
+  `GeneTooltip.attach()` adapter instead of reinitializing the global gene
+  module per hover. One attached anchor is reused as the selected point
+  changes, and repeated widget renders no longer accumulate listeners.
+- On touch devices, tapping a plot point opens the gene tooltip as a
+  persistent bottom drawer (on screens at or below 600 CSS pixels wide).
+  Desktop hover behavior is unchanged, and the desktop tooltip card can now be
+  moused into without closing.
+
 # BioTooltipR 0.1.1
 
 - Update dependencies and vendor code

@@ -54,7 +54,7 @@ The important detail is that HTML escaping must be disabled for the table cell c
 
 ## Assets
 
-`use_bio_tooltips()` uses vendored `bio-tooltips` 2.0.9, D3 7.9.0, and
+`use_bio_tooltips()` uses vendored `bio-tooltips` 2.3.2, D3 7.9.0, and
 Ideogram 1.53.0 browser assets by default, so building this vignette does not
 download JavaScript or CSS files. D3 and Ideogram are included automatically
 when the gene module is enabled because they render the gene model and
@@ -62,14 +62,14 @@ chromosome ideogram.
 To use jsDelivr-hosted assets in a rendered report, opt in explicitly:
 
 ```{r cdn-demo, eval=FALSE}
-use_bio_tooltips(cdn = TRUE, version = "2.0.9")
+use_bio_tooltips(cdn = TRUE, version = "2.3.2")
 ```
 
 ## Volcano plot
 
 Interactive plotting libraries usually own their hover labels, so the most
-reliable pattern is to let Plotly handle the plot hover event and update a real
-HTML Bio Tooltip span next to the plot.
+reliable pattern is to let Plotly handle the plot hover (and click, for touch)
+events and update a real HTML Bio Tooltip span next to the plot.
 
 ```{r volcano-demo, message=FALSE, warning=FALSE}
 if (!requireNamespace("plotly", quietly = TRUE) ||
@@ -176,7 +176,7 @@ volcano_plot <- plotly::plot_ly(
     "Down-regulated" = "#2563eb",
     "Not significant" = "#7a7f87"
   ),
-  marker = list(size = 9, opacity = 0.82, line = list(width = 0)),
+  marker = list(size = 12, opacity = 0.82, line = list(width = 0)),
   textfont = list(size = 10, color = "#24292f")
 ) |>
   plotly::layout(
@@ -198,9 +198,12 @@ bt_plotly_gene_hover(volcano_plot, species = "human", include_setup = FALSE)
 }
 ```
 
-Plotly still owns the hover event, but its default hover card is suppressed.
+Plotly still owns the pointer events, but its default hover card is suppressed.
 `bt_plotly_gene_hover()` reads the gene symbol from Plotly's `key` field and
-updates a tiny fixed-position Bio Tooltip span at the cursor.
+opens a Bio Tooltip for it. Hover over a point on desktop, or tap a point on a
+touch device: on narrow screens (600 CSS pixels or less) the tooltip opens as a
+persistent bottom drawer that stays open until another point is selected or the
+user dismisses it.
 
 ## Experimental auto-linking
 

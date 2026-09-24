@@ -1,5 +1,7 @@
 # BioTooltipR
 
+![CRAN version](https://www.r-pkg.org/badges/version/BioTooltipR)
+
 `BioTooltipR` is a lightweight R helper package for adding browser-side [bio-tooltips](https://mattjmeier.github.io/bio-tooltips/) gene and chemical tooltips to R Markdown, Quarto, Shiny, pkgdown, and other HTML reports.
 
 The R package does **not** reimplement the `bio-tooltips` JavaScript library in R. Instead, it:
@@ -15,6 +17,11 @@ Install the released version from CRAN:
 ```r
 install.packages("BioTooltipR")
 ```
+
+## Documentation
+
+- [CRAN package page, vignette, and reference manual](https://CRAN.R-project.org/package=BioTooltipR)
+- [GitHub repository](https://github.com/mattjmeier/BioTooltipR)
 
 ## Minimal R Markdown example
 
@@ -80,11 +87,11 @@ This feature is intentionally opt-in because many gene symbols are ordinary Engl
 
 ## Asset strategy
 
-By default, `use_bio_tooltips()` uses vendored `bio-tooltips` 2.0.9,
+By default, `use_bio_tooltips()` uses vendored `bio-tooltips` 2.3.2,
 D3 7.9.0, and Ideogram 1.53.0 browser assets included with this R package.
 D3 and Ideogram are loaded only for the gene module. CDN assets remain
 available when explicitly requested:
 
 ```r
-use_bio_tooltips(cdn = TRUE, version = "2.0.9")
+use_bio_tooltips(cdn = TRUE, version = "2.3.2")
 ```
