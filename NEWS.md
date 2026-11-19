@@ -1,3 +1,10 @@
+# BioTooltipR 0.2.0
+
+- Updated the vendored `bio-tooltips` runtime to 2.4.2.
+  It loads gene annotations on demand and improves transcript summaries.
+- Pinned Plotly gene tooltips stay open while you hover over or pin other plot
+  points.
+
 # BioTooltipR 0.1.2
 
 - Updated the vendored `bio-tooltips` runtime to 2.3.2, bringing the latest

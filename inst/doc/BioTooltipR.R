@@ -25,7 +25,7 @@ top_genes |>
   bt_kable(include_setup = FALSE)
 
 ## ----cdn-demo, eval=FALSE-----------------------------------------------------
-# use_bio_tooltips(cdn = TRUE, version = "2.3.2")
+# use_bio_tooltips(cdn = TRUE, version = "2.4.2")
 
 ## ----volcano-demo, message=FALSE, warning=FALSE-------------------------------
 if (!requireNamespace("plotly", quietly = TRUE) ||

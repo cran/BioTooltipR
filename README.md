@@ -87,11 +87,15 @@ This feature is intentionally opt-in because many gene symbols are ordinary Engl
 
 ## Asset strategy
 
-By default, `use_bio_tooltips()` uses vendored `bio-tooltips` 2.3.2,
+By default, `use_bio_tooltips()` uses vendored `bio-tooltips` 2.4.2,
 D3 7.9.0, and Ideogram 1.53.0 browser assets included with this R package.
 D3 and Ideogram are loaded only for the gene module. CDN assets remain
 available when explicitly requested:
 
 ```r
-use_bio_tooltips(cdn = TRUE, version = "2.3.2")
+use_bio_tooltips(cdn = TRUE, version = "2.4.2")
 ```
+
+## AI-assisted development
+
+Generative AI tools have been used during development to assist with code generation, refactoring, testing, documentation, and debugging. All software design decisions, integration, code review, and testing are performed by me (a human), who is responsible for the resulting code and documentation.
